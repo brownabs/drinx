@@ -1,4 +1,4 @@
-#Drinx
+# Drinx
 ## Drinx is a React Native application where users are able to login in and create and view restaurant and bar drink menus.
 
 ## Installation
