@@ -1,28 +1,36 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  carContainer: {
-    width: "100%",
-    height: "90%",
-  },
   titles: {
-    marginTop: "30%",
-    width: "100%",
-    alignItems: "center",
+    backgroundColor: "#C8A2C8",
+    opacity: 0.89,
+    borderRadius: 40,
+    padding: 10,
+    borderColor: "white",
+    borderWidth: 3,
   },
   title: {
-    fontSize: 40,
+    fontSize: 70,
     fontWeight: "500",
   },
   imgURL: {
     width: "100%",
-    height: "100%",
+    height: "90%",
     resizeMode: "cover",
     position: "absolute",
+    marginBottom: 20,
+    borderRadius: 30,
   },
   subtitle: {
-    fontSize: 16,
     color: "#5c5e62",
+  },
+  drinkContainer: {
+    flexGrow: 1,
+    justifyContent: "flex-end",
+    borderRadius: 30,
+    width: "100%",
+    height: "100%",
+    marginBottom: 30,
   },
 });
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { SafeAreaView } from "react-native";
 import { View, FlatList, Dimensions, TextInput } from "react-native";
 import DrinkData from "../../data/drinkData";
 import DrinkItem from "../DrinkItem";
@@ -13,19 +14,6 @@ const DrinkList = (props) => {
     });
     console.log(drink);
   }, []);
-
-  const renderSeparator = () => {
-    return (
-      <View
-        style={{
-          height: 2,
-          width: "100%",
-          backgroundColor: "#CED0CE",
-          marginTop: "5%",
-        }}
-      />
-    );
-  };
 
   const handleSearch = () => {
     return (
@@ -45,22 +33,27 @@ const DrinkList = (props) => {
     return (
       <View
         style={{
-          backgroundColor: "#fff",
+          borderRadius: 20,
+          backgroundColor: "#F2F2F2",
           padding: 15,
+          margin: 10,
           alignItems: "center",
           justifyContent: "center",
+          borderColor: "#C8A2C8",
+          borderWidth: 5,
         }}
       >
         <TextInput
+          id="search"
           autoCapitalize="none"
           autoCorrect={false}
           status="info"
           onChangeText={handleSearch}
-          placeholder="Search"
+          placeholder="Search Drink"
           style={{
-            borderRadius: 25,
+            borderRadius: 10,
             borderColor: "black",
-            backgroundColor: "#fff",
+            fontSize: 25,
           }}
           textStyle={{ color: "#000" }}
         />
@@ -69,7 +62,7 @@ const DrinkList = (props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={drink}
         keyExtractor={(item) => item.firebaseKey}
@@ -77,7 +70,6 @@ const DrinkList = (props) => {
           paddingBottom: 10,
         }}
         ListHeaderComponent={renderHeader}
-        ItemSeparatorComponent={renderSeparator}
         showsVerticalScrollIndicator={false}
         snapToAlignment={"start"}
         decelerationRate={"fast"}
@@ -86,7 +78,7 @@ const DrinkList = (props) => {
           <DrinkItem key={item.firebaseKey} drink={item} />
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
